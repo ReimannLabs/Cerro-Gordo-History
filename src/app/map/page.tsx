@@ -20,7 +20,7 @@ export default function MapPage() {
       <header className="flex items-center justify-between border-b border-amber-900/20 bg-[#f6f1e6]/95 px-6 py-4 backdrop-blur">
         <div>
           <p className="text-xs uppercase tracking-[0.3em] text-[#8a6a41]">Cerro Gordo</p>
-          <h1 className="text-lg font-semibold">Interactive Map Experience</h1>
+          <h1 className="font-pt-serif text-lg font-semibold">Interactive Map Experience</h1>
         </div>
         <div className="flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.18em]">
           <Link

@@ -88,7 +88,7 @@ export default function ExperienceChooser() {
 								<span className="inline-flex w-fit rounded-full border border-slate-200/40 px-3 py-1 text-xs uppercase tracking-[0.3em] text-amber-100/90">
 									{option.badge}
 								</span>
-								<h2 className="text-2xl font-semibold text-amber-50 drop-shadow-lg">
+								<h2 className="font-pt-serif text-2xl font-semibold text-amber-50 drop-shadow-lg">
 									{option.title}
 								</h2>
 								<p className="text-sm leading-relaxed text-amber-100/90">

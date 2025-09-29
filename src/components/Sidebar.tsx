@@ -168,7 +168,7 @@ export default function Sidebar({ activePhaseId }: { activePhaseId: string }) {
 					))}
 				</nav>
 			</div>
-			<div className="flex-1 overflow-y-auto p-4 space-y-4 text-[#3b2b1c] leading-relaxed">
+			<div className="flex-1 overflow-y-auto p-4 space-y-4 text-[#3b2b1c] leading-relaxed font-pt-serif">
 				<header className="space-y-1">
 					<h2 className="text-sm font-semibold text-[#4a3724]">
 						Phase: {activePhase?.name ?? activePhaseId}
@@ -181,10 +181,8 @@ export default function Sidebar({ activePhaseId }: { activePhaseId: string }) {
 				{activeTab === 'people' &&
 					PEOPLE.map((person) => (
 						<article key={person.name} className="space-y-1">
-							<h3 className="text-sm font-semibold text-gray-900">
-								{person.name}
-							</h3>
-							<p className="text-sm text-gray-600">
+							<h3 className="text-sm font-semibold text-[#4a3724] font-pt-serif">{person.name}</h3>
+							<p className="text-sm text-[#5c442d]">
 								{person.description}
 							</p>
 						</article>

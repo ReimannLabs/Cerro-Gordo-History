@@ -18,7 +18,7 @@ export default function Timeline({ activePhaseId, onPhaseSelect }: {
             key={phase.id}
             type="button"
             onClick={() => onPhaseSelect(phase.id)}
-            className={`px-4 py-2 rounded-full border text-sm font-semibold transition-colors ${
+            className={`px-4 py-2 rounded-full border text-sm font-semibold transition-colors font-pt-serif ${
               activePhaseId === phase.id
                 ? 'bg-[#7f5933] border-[#7f5933] text-amber-50 shadow'
                 : 'border-amber-900/30 text-[#4a3724] hover:bg-amber-200/40'

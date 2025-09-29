@@ -53,64 +53,66 @@ const cardVariants = {
 
 export default function HistoryPage() {
 	return (
-		<div className="flex min-h-screen flex-col bg-[#1f1b17] text-amber-50">
-			<div className="absolute inset-0 -z-10">
+		<div className="flex min-h-screen flex-col bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100">
+			<header className="relative overflow-hidden border-b border-amber-200/30 bg-[#1f1b17]/95 text-amber-50">
 				<Image
 					src={paperTexture}
-					alt="Aged paper texture"
+					alt="Aged paper background"
 					fill
-					className="object-cover opacity-[0.18]"
+					className="absolute inset-0 object-cover opacity-[0.15]"
 				/>
-			</div>
-			<header className="relative overflow-hidden border-b border-amber-300/20 bg-[#251f1b]/90">
-				<div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#f3e1b833,transparent_65%)]" aria-hidden />
-				<div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-16 lg:py-24">
-					<div className="flex flex-wrap items-center justify-between gap-4">
-						<motion.div
-							initial={{ opacity: 0, y: 24 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.6, ease: 'easeOut' }}
-							className="space-y-6"
-						>
-							<p className="text-sm uppercase tracking-[0.35em] text-blue-200/80">
-								Chronicles of Cerro Gordo
+				<div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#f6e7c733,transparent_70%)]" aria-hidden />
+				<div className="relative mx-auto max-w-6xl px-6 py-16 lg:py-24">
+					<motion.div
+						initial={{ opacity: 0, y: 24 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.6, ease: 'easeOut' }}
+						className="space-y-8 text-center"
+					>
+						<div className="mx-auto flex max-w-5xl flex-col gap-4">
+							<p className="text-xs uppercase tracking-[0.6em] text-amber-200/90">
+								The Cerro Gordo Ledger
 							</p>
-							<h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-								The Mining Camp That Fed a City
+							<div className="mx-auto flex items-center justify-center gap-4 text-amber-200/70">
+								<span className="h-px w-16 bg-amber-200/40" />
+								<span className="font-serif text-sm tracking-[0.4em]">Est. 1865</span>
+								<span className="h-px w-16 bg-amber-200/40" />
+							</div>
+							<h1 className="font-serif uppercase text-4xl tracking-[0.16em] sm:text-5xl lg:text-6xl font-pt-serif">
+								Chronicles of the Mountain Camp
 							</h1>
-							<p className="max-w-2xl text-base sm:text-lg text-slate-300/90 leading-relaxed">
-								Trace Cerro Gordo’s evolution from a remote discovery to a
-								powerhouse of silver, lead, and zinc. Scroll through defining
-								moments, immersive imagery, and personal stories that shaped this
-								high-desert camp.
+							<p className="mx-auto max-w-3xl text-sm leading-relaxed text-amber-100/85 sm:text-base">
+								Dispatches, sketches, and recollections from Cerro Gordo’s richest years. Move through time with curated accounts
+								of the people, structures, and events that forged this high-desert settlement.
 							</p>
-						</motion.div>
-						<motion.div
-							initial={{ opacity: 0, y: 12 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.6, ease: 'easeOut', delay: 0.15 }}
-							className="flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.18em]"
-						>
+						</div>
+						<div className="flex flex-wrap justify-center gap-3 text-xs font-semibold uppercase tracking-[0.18em]">
 							<Link
 								href="/"
-								className="rounded-full border border-amber-200/30 px-3 py-1.5 text-amber-100/90 hover:bg-amber-100/10"
+								className="rounded-full border border-amber-200/40 px-4 py-2 text-amber-100/80 hover:bg-amber-100/10"
 							>
-								Choose Experience
+								Back to Experience Picker
 							</Link>
 							<Link
 								href="/map"
-								className="rounded-full border border-amber-200/30 px-3 py-1.5 text-[#1f1b17] bg-amber-200/90 shadow-lg shadow-amber-900/40 hover:bg-amber-200"
+								className="rounded-full bg-amber-400/90 px-4 py-2 text-[#2d2113] shadow-lg shadow-amber-900/40 hover:bg-amber-300"
 							>
 								Interactive Map
 							</Link>
-						</motion.div>
-					</div>
+						</div>
+					</motion.div>
 				</div>
 			</header>
 
-			<main className="relative flex-1 overflow-hidden">
+			<main className="relative flex-1 overflow-hidden bg-[#1a1612]">
+				<Image
+					src={paperTexture}
+					alt="Paper texture"
+					fill
+					className="absolute inset-0 object-cover opacity-[0.08]"
+				/>
 				<div
-					className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-r from-[#1f1b17] via-transparent to-[#1f1b17] opacity-80"
+					className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-r from-[#1a1612] via-transparent to-[#1a1612] opacity-80"
 					aria-hidden
 				/>
 				<motion.div
@@ -123,68 +125,58 @@ export default function HistoryPage() {
 						<motion.section
 							key={event.id}
 							variants={cardVariants}
-							className="group relative flex min-h-[520px] w-[340px] flex-col overflow-hidden rounded-[32px] border border-amber-200/20 bg-[#2a231e]/95 p-8 shadow-2xl shadow-black/50 transition-transform duration-300 hover:-translate-y-2 md:w-[420px]"
+							className="group relative flex min-h-[540px] w-[340px] flex-col overflow-hidden rounded-[30px] border border-amber-200/20 bg-[#262019]/90 p-8 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.75)] transition-transform duration-300 hover:-translate-y-3 md:w-[420px]"
 						>
-							<Image
-								src={paperTexture}
-								alt="Deckled paper"
-								fill
-								className="object-cover opacity-25"
+							<div
+								className={`absolute inset-0 bg-gradient-to-br ${event.color} opacity-10 transition-opacity duration-300 group-hover:opacity-30`}
+								aria-hidden
 							/>
-							<div className="absolute inset-0 bg-gradient-to-br from-transparent via-[#1f1b17]/30 to-[#1f1b17]/40" aria-hidden />
-							<div className="relative flex flex-1 flex-col gap-5 text-amber-100">
-								<div className="flex items-center gap-3 text-xs uppercase tracking-[0.35em] text-amber-200/70">
-									<span className="h-px flex-1 bg-blue-200/40" />
+							<div className="relative flex flex-1 flex-col gap-6 text-amber-50">
+								<div className="flex items-center gap-3 text-xs uppercase tracking-[0.35em] text-amber-200/75">
+									<span className="h-px flex-1 bg-amber-200/40" />
 									{event.year}
-									<span className="h-px flex-1 bg-blue-200/40" />
+									<span className="h-px flex-1 bg-amber-200/40" />
 								</div>
-								<h2 className="text-2xl font-semibold text-white drop-shadow-md">
+								<h2 className="font-pt-serif text-2xl tracking-[0.1em] text-amber-50">
 									{event.title}
 								</h2>
-								<p className="text-sm leading-relaxed text-amber-100/90">
+								<p className="text-sm leading-relaxed text-amber-100/85">
 									{event.description}
 								</p>
-								<div className="relative mt-auto aspect-[4/3] overflow-hidden rounded-2xl border border-amber-200/20 bg-[#1a1714]/95">
+								<div className="flex flex-wrap gap-3 text-[0.68rem] uppercase tracking-[0.2em] text-amber-200/60">
+									<span className="rounded-full border border-amber-200/25 px-3 py-1">Primary sources</span>
+									<span className="rounded-full border border-amber-200/25 px-3 py-1">Eyewitness accounts</span>
+									<span className="rounded-full border border-amber-200/25 px-3 py-1">Archival imagery</span>
+								</div>
+								<div className="relative mt-auto aspect-[4/3] overflow-hidden rounded-2xl border border-amber-200/20 bg-[#15110d]/80">
 									<Image
 										src={paperTexture}
-										alt="Aged paper detail"
+										alt="paper detail"
 										fill
-										className="object-cover opacity-15"
+										className="object-cover opacity-[0.12]"
 									/>
 									<div className="absolute inset-0 grid place-items-center px-6 text-center text-xs text-amber-200/60">
 										{event.imageAlt}
 									</div>
-									<div
-										className="absolute inset-0 bg-[radial-gradient(circle_at_center,#fdf5df19,transparent_68%)]"
-										aria-hidden
-									/>
+									<div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#fff5dd1f,transparent_70%)]" aria-hidden />
 								</div>
 							</div>
-							<div className="relative mt-12 flex items-center justify-between px-12 text-xs text-amber-200/60">
-								<div className="flex items-center gap-4">
-									<span className="inline-flex h-2 w-2 rounded-full bg-amber-300 shadow shadow-amber-600/40" />
-									Upcoming: archival photos, oral histories, and immersive panoramas.
-								</div>
-								<div className="hidden md:flex items-center gap-2">
-									<span className="text-amber-200/40">Scroll horizontally</span>
-								</div>
+							<div className="relative mt-6 flex items-center gap-4 text-xs text-amber-200/60">
+								<span className="inline-flex h-2 w-2 rounded-full bg-amber-300 shadow shadow-amber-600/40" />
+								Upcoming: archival photos, oral histories, and immersive panoramas.
 							</div>
 						</motion.section>
 					))}
 				</motion.div>
 			</main>
 
-			<footer className="border-t border-amber-300/20 bg-[#1a1612]/90">
-				<div className="mx-auto max-w-5xl px-6 py-10 flex flex-col gap-4 text-sm text-amber-200/70 sm:flex-row sm:items-center sm:justify-between">
+			<footer className="border-t border-amber-200/20 bg-[#19130f]/95 text-amber-100/75">
+				<div className="mx-auto max-w-5xl px-6 py-10 flex flex-col gap-4 text-sm sm:flex-row sm:items-center sm:justify-between">
 					<p>
-						More eras coming soon: bullion bonanza, boomtown society, and the
-						preservation years.
+						More eras coming soon: bullion bonanza, boomtown society, and the preservation years.
 					</p>
-					<Link
-						href="/"
-						className="text-amber-100/80 hover:text-amber-100"
-					>
-						Back to experience choose
+					<Link href="/map" className="text-amber-100/90 hover:text-amber-50">
+						Visit the map experience →
 					</Link>
 				</div>
 			</footer>

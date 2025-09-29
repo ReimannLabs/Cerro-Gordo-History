@@ -24,3 +24,7 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.font-pt-serif {
+  font-family: var(--font-pt-serif), serif;
+}
