@@ -21,7 +21,7 @@ const options = [
 		badge: 'Narrative',
 		title: 'Historical Timeline',
 		description:
-			'Walk through defining moments with imagery and narrative detail—from discovery through the zinc revival and ongoing preservation.',
+			'Walk through defining moments with imagery and narrative detail, from discovery through the zinc revival and ongoing preservation.',
 		cta: 'Enter Timeline',
 		accent: 'bg-amber-900/30',
 	},
