@@ -19,8 +19,7 @@ export default function Timeline({ activePhaseId, onPhaseSelect }: {
                 : 'hover:bg-gray-100 text-gray-700'
             }`}
           >
-            <div className="text-sm font-semibold leading-none">{phase.id}</div>
-            <div className="text-xs text-gray-500">{phase.description}</div>
+            <span className="text-sm font-semibold leading-none">{phase.name}</span>
           </button>
         ))}
       </div>

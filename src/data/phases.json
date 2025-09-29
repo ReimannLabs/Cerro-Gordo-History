@@ -1,24 +1,10 @@
 {
   "phases": [
     {
-      "id": "1860",
-      "name": "1860 – Discovery Era",
-      "mapPath": "/maps/1860.jpg",
-      "description": "Earliest documented layout during Pablo Flores’s discovery years.",
-      "points": []
-    },
-    {
-      "id": "1870s",
-      "name": "1870s - Peak Production",
-      "mapPath": "/maps/1870s.jpg",
-      "description": "The peak of silver and lead production",
-      "points": []
-    },
-    {
-      "id": "1880s",
-      "name": "1880s - Decline",
-      "mapPath": "/maps/1880s.jpg",
-      "description": "The beginning of the decline",
+      "id": "1913",
+      "name": "1913 – Zinc Revival",
+      "mapPath": "/maps/1913.jpg",
+      "description": "Snapshot of Cerro Gordo during the early-1910s zinc resurgence led by L.D. Gordon.",
       "points": []
     }
   ]

@@ -1,6 +1,7 @@
 'use client'
 
 import { useMemo, useState } from 'react'
+import Link from 'next/link'
 import phases from '@/data/phases.json'
 
 const TABS = ['buildings', 'people', 'business'] as const
@@ -168,7 +169,7 @@ export default function Sidebar({ activePhaseId }: { activePhaseId: string }) {
       <div className="flex-1 overflow-y-auto p-4 space-y-4">
         <header className="space-y-1">
           <h2 className="text-sm font-semibold text-gray-900">
-            Phase: {activePhaseId}
+            Phase: {activePhase?.name ?? activePhaseId}
           </h2>
           <p className="text-xs text-gray-500">
             {activePhase?.description ?? 'Explore Cerro Gordo across time.'}
@@ -194,6 +195,12 @@ export default function Sidebar({ activePhaseId }: { activePhaseId: string }) {
         {activeTab === 'business' && (
           <p className="text-sm text-gray-600">{BUSINESS_PLACEHOLDER}</p>
         )}
+      </div>
+      <div className="border-t border-gray-200 bg-white px-4 py-3 text-xs text-gray-500">
+        Looking for a deeper narrative?
+        <Link href="/history" className="ml-1 font-semibold text-blue-600 hover:text-blue-500">
+          Explore the History Gallery →
+        </Link>
       </div>
     </div>
   )
