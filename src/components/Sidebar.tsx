@@ -152,7 +152,7 @@ export default function Sidebar({ activePhaseId }: { activePhaseId: string }) {
           {TABS.map((tab) => (
             <button
               key={tab}
-              onClick={() => setActiveTab(tab as any)}
+              onClick={() => setActiveTab(tab)}
               className={`
                 flex-1 py-4 px-1 text-center border-b-2
                 ${activeTab === tab 
