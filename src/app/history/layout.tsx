@@ -8,5 +8,5 @@ export default function HistoryLayout({
 }: {
   children: React.ReactNode
 }) {
-  return children
+  return <>{children}</>
 }
