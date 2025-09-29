@@ -1,7 +1,9 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import paperTexture from '@/app/pictures/papertexture.png'
 
 const events = [
 	{
@@ -51,12 +53,17 @@ const cardVariants = {
 
 export default function HistoryPage() {
 	return (
-		<div className="flex min-h-screen flex-col bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100">
-			<header className="relative overflow-hidden border-b border-white/10">
-				<div
-					className="absolute inset-0 bg-[radial-gradient(circle_at_top,#ffffff22,transparent_60%)]"
-					aria-hidden
+		<div className="flex min-h-screen flex-col bg-[#1f1b17] text-amber-50">
+			<div className="absolute inset-0 -z-10">
+				<Image
+					src={paperTexture}
+					alt="Aged paper texture"
+					fill
+					className="object-cover opacity-[0.18]"
 				/>
+			</div>
+			<header className="relative overflow-hidden border-b border-amber-300/20 bg-[#251f1b]/90">
+				<div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#f3e1b833,transparent_65%)]" aria-hidden />
 				<div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-16 lg:py-24">
 					<div className="flex flex-wrap items-center justify-between gap-4">
 						<motion.div
@@ -86,13 +93,13 @@ export default function HistoryPage() {
 						>
 							<Link
 								href="/"
-								className="rounded-full border border-white/20 px-3 py-1.5 text-slate-200/90 hover:bg-white/10"
+								className="rounded-full border border-amber-200/30 px-3 py-1.5 text-amber-100/90 hover:bg-amber-100/10"
 							>
 								Choose Experience
 							</Link>
 							<Link
 								href="/map"
-								className="rounded-full bg-blue-500/90 px-3 py-1.5 text-white shadow-lg shadow-blue-500/30 hover:bg-blue-500"
+								className="rounded-full border border-amber-200/30 px-3 py-1.5 text-[#1f1b17] bg-amber-200/90 shadow-lg shadow-amber-900/40 hover:bg-amber-200"
 							>
 								Interactive Map
 							</Link>
@@ -103,7 +110,7 @@ export default function HistoryPage() {
 
 			<main className="relative flex-1 overflow-hidden">
 				<div
-					className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-r from-slate-950 via-transparent to-slate-950 opacity-70"
+					className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-r from-[#1f1b17] via-transparent to-[#1f1b17] opacity-80"
 					aria-hidden
 				/>
 				<motion.div
@@ -116,14 +123,17 @@ export default function HistoryPage() {
 						<motion.section
 							key={event.id}
 							variants={cardVariants}
-							className="group relative flex h-[520px] w-[340px] flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-transform duration-300 hover:-translate-y-2 md:w-[420px]"
+							className="group relative flex min-h-[520px] w-[340px] flex-col overflow-hidden rounded-[32px] border border-amber-200/20 bg-[#2a231e]/95 p-8 shadow-2xl shadow-black/50 transition-transform duration-300 hover:-translate-y-2 md:w-[420px]"
 						>
-							<div
-								className={`absolute inset-0 bg-gradient-to-br ${event.color} opacity-20 transition-opacity duration-300 group-hover:opacity-40`}
-								aria-hidden
+							<Image
+								src={paperTexture}
+								alt="Deckled paper"
+								fill
+								className="object-cover opacity-25"
 							/>
-							<div className="relative flex flex-1 flex-col gap-6">
-								<div className="flex items-center gap-3 text-xs uppercase tracking-[0.35em] text-blue-200/75">
+							<div className="absolute inset-0 bg-gradient-to-br from-transparent via-[#1f1b17]/30 to-[#1f1b17]/40" aria-hidden />
+							<div className="relative flex flex-1 flex-col gap-5 text-amber-100">
+								<div className="flex items-center gap-3 text-xs uppercase tracking-[0.35em] text-amber-200/70">
 									<span className="h-px flex-1 bg-blue-200/40" />
 									{event.year}
 									<span className="h-px flex-1 bg-blue-200/40" />
@@ -131,39 +141,50 @@ export default function HistoryPage() {
 								<h2 className="text-2xl font-semibold text-white drop-shadow-md">
 									{event.title}
 								</h2>
-								<p className="text-sm leading-relaxed text-slate-200/90">
+								<p className="text-sm leading-relaxed text-amber-100/90">
 									{event.description}
 								</p>
-								<div className="relative mt-auto aspect-[4/3] overflow-hidden rounded-2xl border border-white/15 bg-slate-950/60">
-									<div className="absolute inset-0 grid place-items-center px-6 text-center text-xs text-slate-500">
+								<div className="relative mt-auto aspect-[4/3] overflow-hidden rounded-2xl border border-amber-200/20 bg-[#1a1714]/95">
+									<Image
+										src={paperTexture}
+										alt="Aged paper detail"
+										fill
+										className="object-cover opacity-15"
+									/>
+									<div className="absolute inset-0 grid place-items-center px-6 text-center text-xs text-amber-200/60">
 										{event.imageAlt}
 									</div>
 									<div
-										className="absolute inset-0 bg-[radial-gradient(circle_at_center,#ffffff15,transparent_65%)]"
+										className="absolute inset-0 bg-[radial-gradient(circle_at_center,#fdf5df19,transparent_68%)]"
 										aria-hidden
 									/>
 								</div>
 							</div>
-							<div className="relative mt-6 flex items-center gap-4 text-xs text-slate-300/70">
-								<span className="inline-flex h-2 w-2 rounded-full bg-blue-300 shadow shadow-blue-500/50" />
-								Upcoming: archival photos, audio histories, and immersive panoramas.
+							<div className="relative mt-12 flex items-center justify-between px-12 text-xs text-amber-200/60">
+								<div className="flex items-center gap-4">
+									<span className="inline-flex h-2 w-2 rounded-full bg-amber-300 shadow shadow-amber-600/40" />
+									Upcoming: archival photos, oral histories, and immersive panoramas.
+								</div>
+								<div className="hidden md:flex items-center gap-2">
+									<span className="text-amber-200/40">Scroll horizontally</span>
+								</div>
 							</div>
 						</motion.section>
 					))}
 				</motion.div>
 			</main>
 
-			<footer className="border-t border-white/10 bg-slate-950/80">
-				<div className="mx-auto max-w-5xl px-6 py-10 flex flex-col gap-4 text-sm text-slate-400/80 sm:flex-row sm:items-center sm:justify-between">
+			<footer className="border-t border-amber-300/20 bg-[#1a1612]/90">
+				<div className="mx-auto max-w-5xl px-6 py-10 flex flex-col gap-4 text-sm text-amber-200/70 sm:flex-row sm:items-center sm:justify-between">
 					<p>
 						More eras coming soon: bullion bonanza, boomtown society, and the
 						preservation years.
 					</p>
 					<Link
 						href="/"
-						className="text-blue-200/80 hover:text-blue-100"
+						className="text-amber-100/80 hover:text-amber-100"
 					>
-						Back to timeline & map
+						Back to experience choose
 					</Link>
 				</div>
 			</footer>

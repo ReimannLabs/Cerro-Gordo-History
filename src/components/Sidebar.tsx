@@ -149,18 +149,18 @@ export default function Sidebar({ activePhaseId }: { activePhaseId: string }) {
 	)
 
 	return (
-		<div className="w-80 border-r border-gray-200 flex flex-col">
-			<div className="border-b border-gray-200">
+		<div className="w-80 border-r border-amber-900/30 bg-[#f6f1e6] flex flex-col">
+			<div className="border-b border-amber-900/20 bg-[#efe4d1]">
 				<nav className="flex" aria-label="Tabs">
 					{TABS.map((tab) => (
 						<button
 							key={tab}
 							onClick={() => setActiveTab(tab)}
 							className={`
-                flex-1 py-4 px-1 text-center border-b-2
-                ${activeTab === tab
-					? 'border-blue-500 text-blue-600'
-					: 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'}
+                flex-1 py-4 px-1 text-center border-b-2 text-sm font-semibold uppercase tracking-[0.08em]
+                ${activeTab === tab 
+                  ? 'border-[#7f5933] text-[#7f5933] bg-[#fdf7ec]'
+                  : 'border-transparent text-[#5c442d] hover:text-[#7f5933] hover:bg-[#faeed7]'}
               `}
 						>
 							{tab.charAt(0).toUpperCase() + tab.slice(1)}
@@ -168,12 +168,12 @@ export default function Sidebar({ activePhaseId }: { activePhaseId: string }) {
 					))}
 				</nav>
 			</div>
-			<div className="flex-1 overflow-y-auto p-4 space-y-4">
+			<div className="flex-1 overflow-y-auto p-4 space-y-4 text-[#3b2b1c] leading-relaxed">
 				<header className="space-y-1">
-					<h2 className="text-sm font-semibold text-gray-900">
+					<h2 className="text-sm font-semibold text-[#4a3724]">
 						Phase: {activePhase?.name ?? activePhaseId}
 					</h2>
-					<p className="text-xs text-gray-500">
+					<p className="text-xs text-[#7d5e3a]">
 						{activePhase?.description ?? 'Explore Cerro Gordo across time.'}
 					</p>
 				</header>
@@ -208,11 +208,11 @@ export default function Sidebar({ activePhaseId }: { activePhaseId: string }) {
 					</p>
 				)}
 			</div>
-			<div className="border-t border-gray-200 bg-white px-4 py-3 text-xs text-gray-500">
-				Looking for a deeper narrative?
+			<div className="border-t border-amber-900/20 bg-[#efe4d1] px-4 py-3 text-xs text-[#6b4f2e]">
+				Looking for the full chronology?
 				<Link
 					href="/history"
-					className="ml-1 font-semibold text-blue-600 hover:text-blue-500"
+					className="ml-1 font-semibold text-[#7f5933] hover:text-[#5c442d]"
 				>
 					Explore the History Gallery →
 				</Link>

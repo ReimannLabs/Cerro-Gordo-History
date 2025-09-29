@@ -16,22 +16,22 @@ export default function MapPage() {
   const [activePhaseId, setActivePhaseId] = useState(phases.phases[0]?.id ?? '')
 
   return (
-    <main className="flex h-screen flex-col bg-slate-50">
-      <header className="flex items-center justify-between border-b border-slate-200/80 bg-white/80 px-6 py-4 backdrop-blur">
+    <main className="flex h-screen flex-col bg-[#f0e7d8] text-[#2e2216]">
+      <header className="flex items-center justify-between border-b border-amber-900/20 bg-[#f6f1e6]/95 px-6 py-4 backdrop-blur">
         <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-slate-500">Cerro Gordo</p>
-          <h1 className="text-lg font-semibold text-slate-800">Interactive Map Experience</h1>
+          <p className="text-xs uppercase tracking-[0.3em] text-[#8a6a41]">Cerro Gordo</p>
+          <h1 className="text-lg font-semibold">Interactive Map Experience</h1>
         </div>
         <div className="flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.18em]">
           <Link
             href="/"
-            className="rounded-full border border-slate-300 px-3 py-1.5 text-slate-600 hover:border-slate-400 hover:text-slate-800"
+            className="rounded-full border border-amber-900/30 px-3 py-1.5 text-[#4a3724] hover:bg-amber-200/40"
           >
             Choose Experience
           </Link>
           <Link
             href="/history"
-            className="rounded-full bg-slate-900 px-3 py-1.5 text-white shadow hover:bg-slate-700"
+            className="rounded-full bg-[#7f5933] px-3 py-1.5 text-amber-50 shadow hover:bg-[#6d4c2b]"
           >
             History Timeline
           </Link>
