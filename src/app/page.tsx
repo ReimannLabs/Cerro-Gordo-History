@@ -1,9 +1,10 @@
 'use client'
 
+import { useState } from 'react'
 import dynamic from 'next/dynamic'
 import Timeline from '@/components/Timeline'
 import Sidebar from '@/components/Sidebar'
-import { useState } from 'react'
+import Onboarding from '@/components/Onboarding'
 import phases from '@/data/phases.json'
 
 // Dynamically import the Map component to avoid SSR issues with Leaflet
@@ -17,6 +18,7 @@ export default function Home() {
 
   return (
     <main className="flex flex-col h-screen bg-slate-50">
+      <Onboarding />
       <Timeline activePhaseId={activePhaseId} onPhaseSelect={setActivePhaseId} />
       <div className="flex flex-1 overflow-hidden">
         <Sidebar activePhaseId={activePhaseId} />
